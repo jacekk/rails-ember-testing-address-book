@@ -1,0 +1,3 @@
+describe 'Routing', ->
+
+  it '/', -> routesTo '/', ''
