@@ -1,3 +1,3 @@
 describe 'Routing', ->
 
-  it '/', -> routesTo '/', ''
+  it '/', -> routesTo '/', 'index'
