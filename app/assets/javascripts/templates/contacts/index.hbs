@@ -1,1 +1,8 @@
 <h1 class="contacts_heading">Hello DWO! Hello Bielsko-Biała!</h1>
+
+{{controller.content.length}}
+<ul class='contacts-list'>
+  {{#each}}
+    <li>First Name: {{first_name}}</li>
+  {{/each}}
+</ul>
