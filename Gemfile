@@ -11,6 +11,8 @@ gem 'ember-rails', '~> 0.14.1'
 gem 'ember-source', '~>1.3.1.1'
 gem 'active_model_serializers'
 
+gem 'bootstrap-sass', '~> 3.1.1'
+
 group :development do
   gem 'rails-api'
   gem 'quiet_assets'
