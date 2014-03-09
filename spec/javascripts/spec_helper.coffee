@@ -45,6 +45,4 @@ AddressBook.setupForTesting()
 AddressBook.injectTestHelpers()
 
 beforeEach ->
-  AddressBook.ApplicationAdapter = DS.FixtureAdapter.extend()
-  AddressBook.Contact.FIXTURES = []
   AddressBook.reset()
