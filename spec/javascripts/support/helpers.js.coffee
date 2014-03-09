@@ -6,5 +6,5 @@
 
 @hasAttribute = (model, attribute, type) ->
   test_subject = AddressBook[model].metaForProperty(attribute)
-  equal test_subject.type, type, "Expected " + type + " got: " + test_subject.type
-  ok test_subject.isAttribute
+  test_subject.type.should.equal type
+  test_subject.isAttribute.should.equal true
