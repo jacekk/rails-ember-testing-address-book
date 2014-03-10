@@ -45,4 +45,20 @@ AddressBook.setupForTesting()
 AddressBook.injectTestHelpers()
 
 beforeEach ->
+  AddressBook.ApplicationAdapter = DS.FixtureAdapter
+  AddressBook.Contact.FIXTURES = [
+    id: 1
+    first_name: 'Linus'
+    last_name: 'Torvalds'
+    email: 'linus@torvalds.com'
+    phone: '123-456'
+  ,
+    id: 2
+    first_name: 'Richard'
+    last_name: 'Stallman'
+    email: 'richard@stallman.com'
+    phone: '654-321'
+  ]
+
+afterEach ->
   AddressBook.reset()
