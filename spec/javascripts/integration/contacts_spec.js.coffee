@@ -12,5 +12,8 @@ describe 'Contacts integration', ->
   it 'show input for new contact', ->
     click '#add-new-contact'
     andThen ->
-      inputField = find('#new-first-name').length
-      inputField.should.equal 1
+      firstNameField = find('#new-first-name').length
+      lastNameField = find('#new-last-name').length
+
+      firstNameField.should.equal 1
+      lastNameField.should.equal 1
