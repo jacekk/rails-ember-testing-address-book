@@ -1,5 +1,13 @@
 <h2 class="contacts-heading">Contacts</h2>
 
+{{#if addingNewContact}}
+  <form class='form-inline' role='form'>
+  <div class='form-group'>
+    <label for='new-first-name'>First Name:</label>
+    {{input type='text' value=controller.newFirstName id='new-first-name' classNames='form-control' placeholder='enter first name'}}
+  </div>
+  </form>
+{{/if}}
 <table class='contacts-list table'>
   <thead>
     <tr>
@@ -13,7 +21,7 @@
   <tbody>
     {{#each}}
     <tr class='contact-item'>
-      <td>{{first_name}}</td>
+      <td>{{#link-to 'contacts.show' this}}{{first_name}}{{/link-to}}</td>
       <td>{{last_name}}</td>
       <td>{{email}}</td>
       <td>{{phone}}</td>
