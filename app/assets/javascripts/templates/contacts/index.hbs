@@ -11,6 +11,8 @@
     <label for='new-last-name'>Last Name:</label>
     {{input type='text' value=controller.newLastName id='new-last-name' classNames='form-control' placeholder='enter last name'}}
   </div>
+
+  <button id='save-new-contact' class='btn btn-success' {{action 'saveNewContact'}}>Save</button>
   </form>
 {{/if}}
 <table class='contacts-list table'>
