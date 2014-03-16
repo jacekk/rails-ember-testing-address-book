@@ -17,3 +17,15 @@ describe 'Contacts integration', ->
 
       firstNameField.should.equal 1
       lastNameField.should.equal 1
+
+  it 'adding a new contact', ->
+    click '#add-new-contact'
+    fillIn '#new-first-name', 'Mark'
+    fillIn '#new-last-name', 'Shuttleworth'
+    click '#save-new-contact'
+    andThen ->
+      firstName = find('.contacts-list .contact-item:last td:first').text()
+      lastName = find('.contacts-list .contact-item:last td:nth-child(2)').text()
+
+      firstName.should.equal 'Mark'
+      lastName.should.equal 'Shuttleworth'
