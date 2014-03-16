@@ -8,3 +8,9 @@ describe 'Contacts integration', ->
   it 'renders contacts', ->
     contactsLength = find('.contacts-list .contact-item').length
     contactsLength.should.equal 2
+
+  it 'show input for new contact', ->
+    click '#add-new-contact'
+    andThen ->
+      inputField = find('#new-first-name').length
+      inputField.should.equal 1
