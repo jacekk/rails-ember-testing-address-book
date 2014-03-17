@@ -40,3 +40,9 @@ describe 'Contacts integration', ->
       andThen ->
         addNewContactButton = find('#add-new-contact').length
         addNewContactButton.should.equal 1
+
+  it 'deleting a contact', ->
+    click '.contacts-list .contact-item:first .delete-button'
+    andThen ->
+      contacts = find('.contacts-list .contact-item').length
+      contacts.should.equal 1
