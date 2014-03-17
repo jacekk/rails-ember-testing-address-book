@@ -15,5 +15,10 @@ AddressBook.ContactsIndexController = Em.ArrayController.extend
         self.set 'newLastName', ''
         self.toggleProperty 'addingNewContact'
       ), (->
-        alert 'Unable to save record'
+        alert 'Unable to save rec'
       ))
+
+    cancelNewContact: ->
+      @set 'newFirstName', ''
+      @set 'newLastName', ''
+      @toggleProperty 'addingNewContact'
