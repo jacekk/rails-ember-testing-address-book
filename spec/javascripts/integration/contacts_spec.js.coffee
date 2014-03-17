@@ -29,3 +29,14 @@ describe 'Contacts integration', ->
 
       firstName.should.equal 'Mark'
       lastName.should.equal 'Shuttleworth'
+
+  it 'canceling creation of new contact', ->
+    click '#add-new-contact'
+    andThen ->
+      firstNameField = find('#new-first-name').length
+      firstNameField.should.equal 1
+
+      click '#cancel-new-contact'
+      andThen ->
+        addNewContactButton = find('#add-new-contact').length
+        addNewContactButton.should.equal 1
