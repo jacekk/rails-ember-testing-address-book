@@ -22,3 +22,6 @@ AddressBook.ContactsIndexController = Em.ArrayController.extend
       @set 'newFirstName', ''
       @set 'newLastName', ''
       @toggleProperty 'addingNewContact'
+
+    deleteContact: (contact) ->
+      contact.destroyRecord()

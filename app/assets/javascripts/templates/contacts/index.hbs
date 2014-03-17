@@ -23,6 +23,7 @@
       <th>Last Name</th>
       <th>Email</th>
       <th>Phone(s)</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -33,6 +34,7 @@
       <td>{{last_name}}</td>
       <td>{{email}}</td>
       <td>{{phone}}</td>
+      <td><button class='btn btn-danger delete-button' {{action 'deleteContact' this}}>Delete Contact</button></td>
     </tr>
     {{/each}}
   </tbody>
