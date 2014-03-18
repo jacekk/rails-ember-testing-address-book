@@ -46,3 +46,8 @@ describe 'Contacts integration', ->
     andThen ->
       contacts = find('.contacts-list .contact-item').length
       contacts.should.equal 1
+
+  it 'full name as link on index page', ->
+    andThen ->
+      firstContact = find('.contacts-list .contact-item:first a').text()
+      firstContact.should.equal 'Torvalds, Linus'
