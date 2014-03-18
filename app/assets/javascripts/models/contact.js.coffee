@@ -6,7 +6,7 @@ AddressBook.Contact = DS.Model.extend
 
   full_name: (->
     "#{@get('last_name')}, #{@get('first_name')}"
-  ).property()
+  ).property 'first_name', 'last_name'
 
 AddressBook.Contact.FIXTURES = [
   id: 1
