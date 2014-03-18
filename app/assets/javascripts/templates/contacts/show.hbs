@@ -4,4 +4,10 @@
     <li>First Name: {{first_name}}</li>
     <li>Last Name: {{last_name}}</li>
   </ul>
+
+  <ul class='emails'>
+  {{#each emails}}
+    <li class='email-address'>{{address}}<li>
+  {{/each}}
+  </ul>
 </div>
