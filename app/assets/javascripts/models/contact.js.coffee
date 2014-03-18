@@ -4,6 +4,10 @@ AddressBook.Contact = DS.Model.extend
   emails: DS.hasMany 'email'
   phone: DS.attr 'string'
 
+  full_name: (->
+    "#{@get('last_name')}, #{@get('first_name')}"
+  ).property()
+
 AddressBook.Contact.FIXTURES = [
   id: 1
   first_name: 'Linus'
