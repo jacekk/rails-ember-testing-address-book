@@ -7,4 +7,4 @@ describe 'Email address integration', ->
     andThen ->
       emails = find '.email-address'
       emails.length.should.equal 2
-      emails[0].innerText.should.equal 'richard@stallman.com'
+      emails[0].innerText.should.equal 'linus@torvalds.com'

@@ -50,15 +50,23 @@ beforeEach ->
     id: 1
     first_name: 'Linus'
     last_name: 'Torvalds'
-    email: 'linus@torvalds.com'
-    phone: '123-456'
+    emails: '1 2'.w()
   ,
     id: 2
     first_name: 'Richard'
     last_name: 'Stallman'
-    email: 'richard@stallman.com'
-    phone: '654-321'
   ]
+
+  AddressBook.Email.FIXTURES = [
+    id: 1
+    address: 'linus@torvalds.com'
+  ,
+    id: 2
+    address: 'linus.torvalds@example.com'
+  ]
+
+  AddressBook.Contact.reopen
+    emails: DS.hasMany 'email', async: true
 
 afterEach ->
   AddressBook.reset()
