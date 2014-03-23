@@ -1,0 +1,25 @@
+<h2 class="contacts-heading">Contacts</h2>
+<table class='contacts-list table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email(s)</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each}}
+    <tr class='contact-item'>
+      <td>{{#link-to 'contact' this}}{{full_name}}{{/link-to}}</td>
+      <td>{{emails_list}}</td>
+      <td>
+        {{#link-to 'contact' this classNames='btn btn-success'}}show{{/link-to}}
+        <button class='btn btn-danger' {{action 'deleteContact' this}}>delete</button>
+      </td>
+    </tr>
+    {{else}}
+      <td colspan='3'>no contacts have been found</td>
+    {{/each}}
+  </tbody>
+</table>

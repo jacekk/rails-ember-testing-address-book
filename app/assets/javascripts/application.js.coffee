@@ -1,7 +1,8 @@
 #= require jquery
 #= require handlebars
 #= require ember
-#= require ember-data
+# require ember-data
+#= require ember-data.prod
 #= require_self
 #= require address_book
 

@@ -7,24 +7,25 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">DWO Addressbook</a>
+      {{#link-to 'index' classNames='navbar-brand'}}DWO Addressbook{{/link-to}}
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Contacts</a></li>
-        <li><a href="#" id='add-new-contact' {{action 'addNewContact' target='controllers.contactsIndex'}}>New</a></li>
+        {{#link-to "contacts" tagName="li"}}
+          <a href="#">contacts</a>
+        {{/link-to}}
+        {{#link-to "contactNew" tagName="li"}}
+          <a href="#">add new</a>
+        {{/link-to}}
       </ul>
     </div>
   </div>
   </div>
 
   <div class="container">
-
     <div class="starter-template">
-      <h1>Hello DWO! Hello Bielsko-Biała!</h1>
       {{outlet}}
     </div>
-
   </div>
 
 </div>
