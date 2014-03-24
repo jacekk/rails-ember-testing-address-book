@@ -14,17 +14,18 @@
   </div>
 
   <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <label>emails:</label>
-      {{#each emails}}
-      <div class='email'>
+    <label for='last-name' class='col-lg-2 control-label'>emails:</label>
+    <div class="col-lg-10">
+     {{#each emails}}
+      <div class="input-group">
         {{input type='email' value=this.address classNames='form-control' placeholder='enter email address'}}
-        <a class='btn btn-danger' {{action 'deleteEmail' this}}>-</a>
+        <span class="input-group-btn">
+          <a class='btn btn-danger' {{action 'deleteEmail' this}}>-</a>
+        </span>
       </div>
       {{/each}}
       <button class='btn btn-success' {{action 'addEmail'}}>+</button>
     </div>
   </div>
   <button id='save-new-contact' class='btn btn-success' {{action 'saveContact'}}>Save</button>
-  <button id='cancel-new-contact' class='btn btn-danger' {{action 'cancelEditing'}}>Cancel</button>
 </form>
