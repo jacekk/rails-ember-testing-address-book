@@ -1,3 +1,2 @@
 AddressBook.ContactsRoute = Em.Route.extend
-  model: ->
-    @store.findAll 'contact'
+  model: -> @store.findAll('contact')
