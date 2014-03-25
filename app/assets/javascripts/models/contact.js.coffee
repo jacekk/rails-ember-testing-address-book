@@ -21,16 +21,3 @@ AddressBook.Contact.FIXTURES = [
   first_name: 'Richard'
   last_name: 'Stallman'
 ]
-
-# get = Em.get
-# AddressBook.ContactSerializer = DS.RESTSerializer.extend
-#   serializeHasMany: (record, json, relationship) ->
-#     key = relationship.key
-#     relationshipType = DS.RelationshipChange.determineRelationshipType record.constructor, relationship
-#     console.log 'key', key, 'relationshipType', relationshipType
-
-#     if relationshipType is 'manyToNone' or relationshipType is 'manyToMany' or relationshipType is 'manyToOne'
-#       emails = get(record, key)
-#       console.log 'serializer', emails.get('length'), emails.mapBy 'address'
-#       json[key] = emails.mapBy 'id'
-#       console.log 'serilizer return'

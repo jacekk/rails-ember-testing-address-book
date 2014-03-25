@@ -1,4 +1,4 @@
-<form class='form-horizontal' role='form'>
+<div class='form-horizontal'>
   <div class='form-group'>
     <label for='first-name' class='col-lg-2 control-label'>first name:</label>
     <div class="col-lg-10">
@@ -24,8 +24,9 @@
         </span>
       </div>
       {{/each}}
-      <button class='btn btn-success' {{action 'addEmail'}}>+</button>
+      <button class='btn btn-success' {{action 'addEmail' bubbles=false}}>+</button>
     </div>
   </div>
+  <button id='save-new-contact' class='btn' {{action 'cancelEditing'}}>Cancel</button>
   <button id='save-new-contact' class='btn btn-success' {{action 'saveContact'}}>Save</button>
-</form>
+</div>
