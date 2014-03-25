@@ -1,6 +1,7 @@
 AddressBook.ContactEditController = Em.ObjectController.extend
   actions:
     saveContact: ->
+      @get('model.emails').invoke('save')
       @get('model').save().then =>
         @transitionToRoute 'contacts'
 
@@ -10,7 +11,6 @@ AddressBook.ContactEditController = Em.ObjectController.extend
 
     addEmail: ->
       email = @store.createRecord 'email', address: '', contact: @get('model')
-      email.save()
       @get('model.emails').pushObject email
 
     deleteEmail: (email) ->
