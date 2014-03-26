@@ -1,1 +1,22 @@
 <h2 class="contacts-heading">contacts</h2>
+<table class='contacts-list table'>
+  <thead>
+  <tr>
+    <th>name</th>
+    <th>emails</th>
+    <th>actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {{#each}}
+    <tr class='contact-item'>
+      <td>{{firstName}} {{lastName}}</td>
+      <td>{{email}}</td>
+      <td></td>
+    </tr>
+  {{else}}
+      <td colspan='3'>no contacts have been found</td>
+  {{/each}}
+  </tbody>
+</table>
