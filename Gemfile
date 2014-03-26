@@ -14,11 +14,11 @@ gem 'active_model_serializers'
 gem 'bootstrap-sass', '~> 3.1.1'
 
 group :development do
-  gem 'rails-api'
   gem 'quiet_assets'
   gem 'meta_request'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'thin'
 end
 
 group :test, :development do
