@@ -11,7 +11,6 @@
 
     guard -g js
 
-
 # Rails tests
 
     rake db:migrate RAILS_ENV=test
