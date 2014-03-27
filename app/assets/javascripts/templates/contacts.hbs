@@ -11,7 +11,7 @@
   <tbody>
   {{#each}}
     <tr class='contact-item'>
-      <td>{{firstName}} {{lastName}}</td>
+      <td>{{#link-to 'contact' this}}{{full_name}}{{/link-to}}</td>
       <td>{{email}}</td>
       <td></td>
     </tr>
