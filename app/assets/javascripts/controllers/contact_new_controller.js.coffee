@@ -1,4 +1,4 @@
-AddressBook.ContactNewController = Em.ObjectController.extend
+AddressBook.ContactNewController = AddressBook.ContactEditController.extend
   actions:
     cancelEditing: ->
       @get('model').deleteRecord()
