@@ -1,6 +1,14 @@
 <div class='contact-details'>
   <h1 class='contact-heading'>{{firstName}} {{lastName}}</h1>
 
+  <ol class='contact-emails'>
+    {{#each emails}}
+      <li class='email-address'>{{address}}</li>
+    {{else}}
+      <li class='no-emails'>no emails assigned</li>
+    {{/each}}
+  </ol>
+
   {{#link-to 'contactEdit' classNames='contact-edit btn btn-success'}}edit{{/link-to}}
   <button class='contact-delete btn btn-danger' {{action 'deleteContact'}}>delete</button>
 </div>
