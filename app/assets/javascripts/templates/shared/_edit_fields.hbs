@@ -15,6 +15,16 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <label for='last-name' class='col-lg-2 control-label'>emails:</label>
+    <div class="col-lg-10">
+      {{#each emails}}
+        {{input type='email' value=this.address classNames='form-control' placeholder='enter email address'}}
+      {{/each}}
+      <button id='add-email' class='btn btn-success' {{action 'addEmail' bubbles=false}}>add new email</button>
+    </div>
+  </div>
+
   <div class='form-group'>
     <div class='col-lg-offset-2 col-lg-10'>
       <button id='save-contact' class='btn btn-success' {{action 'saveContact' this}}>save</button>

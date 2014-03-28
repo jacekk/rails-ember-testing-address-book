@@ -12,3 +12,15 @@ describe 'Email', ->
       emails = find '.email-address'
       emails.length.should.equal 2
       emails.eq(0).text().should.equal 'linus@torvalds.com'
+
+  it 'adds email', ->
+    visit '/contacts/1/edit'
+    andThen ->
+      click '#add-email'
+      andThen ->
+        fillIn 'input:last', 'l.torvalds@example.com'
+        click '#save-contact'
+        andThen ->
+          emails = find '.email-address'
+          emails.length.should.equal 3
+          emails.eq(2).text().should.equal 'l.torvalds@example.com'
