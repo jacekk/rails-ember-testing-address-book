@@ -3,7 +3,7 @@ attr = DS.attr
 AddressBook.Contact = DS.Model.extend
   firstName:  attr 'string'
   lastName:   attr 'string'
-  email:      attr 'string'
+  emails: DS.hasMany 'email', async: true
 
 AddressBook.Contact.FIXTURES = [
   id: 1
