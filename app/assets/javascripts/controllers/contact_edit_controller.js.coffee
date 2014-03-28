@@ -8,3 +8,7 @@ AddressBook.ContactEditController = Em.ObjectController.extend
     addEmail: ->
       email = @store.createRecord 'email', address: '', contact: @get('model')
       @get('model.emails').pushObject email
+
+    deleteEmail: (email) ->
+      email.deleteRecord()
+      @get('model.emails').removeObject email

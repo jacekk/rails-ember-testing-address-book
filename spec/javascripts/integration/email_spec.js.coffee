@@ -24,3 +24,10 @@ describe 'Email', ->
           emails = find '.email-address'
           emails.length.should.equal 3
           emails.eq(2).text().should.equal 'l.torvalds@example.com'
+
+  it 'deletes email', ->
+    visit '/contacts/1/edit'
+    andThen ->
+      click '.delete-email:last'
+      emails = find 'input[type=email]'
+      emails.length.should.equal 1

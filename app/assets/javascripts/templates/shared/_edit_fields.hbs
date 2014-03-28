@@ -19,7 +19,12 @@
     <label for='last-name' class='col-lg-2 control-label'>emails:</label>
     <div class="col-lg-10">
       {{#each emails}}
-        {{input type='email' value=this.address classNames='form-control' placeholder='enter email address'}}
+        <div class="input-group">
+          {{input type='email' value=this.address classNames='form-control' placeholder='enter email address'}}
+          <span class="input-group-btn">
+          <a class='delete-email btn btn-danger' {{action 'deleteEmail' this}}>-</a>
+        </span>
+        </div>
       {{/each}}
       <button id='add-email' class='btn btn-success' {{action 'addEmail' bubbles=false}}>add new email</button>
     </div>
