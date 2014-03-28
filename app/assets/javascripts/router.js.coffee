@@ -4,3 +4,4 @@ AddressBook.Router.map () ->
   @resource 'contacts'
   @resource 'contact', path: '/contacts/:contact_id'
   @resource 'contactNew', path: '/contacts/new'
+  @resource 'contactEdit', path: '/contacts/:contact_id/edit'
