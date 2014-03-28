@@ -10,7 +10,7 @@ describe 'ContactNew', ->
     andThen ->
       fillIn '#first-name', 'Mark'
       fillIn '#last-name', 'Shuttleworth'
-      click '#save-new-contact'
+      click '#save-contact'
       andThen ->
         name = find('.contact-heading').text()
         name.should.equal 'Mark Shuttleworth'
@@ -19,7 +19,7 @@ describe 'ContactNew', ->
     andThen ->
       fillIn '#first-name', 'Steve'
       fillIn '#last-name', 'Jobs'
-      click '#cancel-new-contact'
+      click '#cancel-contact'
       andThen ->
         contactsLength = find('.contacts-list .contact-item').length
         contactsLength.should.equal 2
