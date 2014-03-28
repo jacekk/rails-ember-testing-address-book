@@ -22,3 +22,8 @@ describe 'Contacts integration', ->
       contactsLength = find('.contact-item').length
       contactsLength.should.equal 0
       find('.no-contacts').text().should.equal 'no contacts have been found'
+
+  it 'emails', ->
+    andThen ->
+      emails = find '.contact-emails'
+      emails[0].innerText.should.equal 'linus@torvalds.com linus.torvalds@example.com'

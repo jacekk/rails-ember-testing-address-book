@@ -12,7 +12,11 @@
   {{#each}}
     <tr class='contact-item'>
       <td>{{#link-to 'contact' this}}{{firstName}} {{lastName}}{{/link-to}}</td>
-      <td>{{email}}</td>
+      <td class='contact-emails'>
+        {{#each emails}}
+          <span class='contact-email'>{{address}}</span>
+        {{/each}}
+      </td>
       <td>
         {{#link-to 'contactEdit' this classNames='contact-edit btn btn-success'}}edit{{/link-to}}
         <button class='contact-delete btn btn-danger' {{action 'deleteContact' this}}>delete</button>
