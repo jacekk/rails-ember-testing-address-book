@@ -4,3 +4,7 @@ AddressBook.ContactNewController = Em.ObjectController.extend
       contact = @get 'model'
       contact.save().then =>
         @transitionToRoute 'contact', contact
+
+    cancelEditing: ->
+      @get('model').deleteRecord()
+      @transitionToRoute 'contacts'

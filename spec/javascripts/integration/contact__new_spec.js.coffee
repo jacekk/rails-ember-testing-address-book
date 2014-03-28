@@ -13,3 +13,13 @@ describe 'ContactNew', ->
       andThen ->
         name = find('.contact-heading').text()
         name.should.equal 'Mark Shuttleworth'
+
+  it 'cancel creating new contact', ->
+    visit '/contacts/new'
+    andThen ->
+      fillIn '#first-name', 'Steve'
+      fillIn '#last-name', 'Jobs'
+      click '#cancel-new-contact'
+      andThen ->
+        contactsLength = find('.contacts-list .contact-item').length
+        contactsLength.should.equal 2
