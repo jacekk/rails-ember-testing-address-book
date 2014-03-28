@@ -9,3 +9,10 @@ describe 'Contact', ->
     .click('.contact-item:last a')
     andThen ->
       find('.contact-details .contact-heading').text().should.equal 'Richard Stallman'
+
+  it 'deletes contact', ->
+    visit '/contacts/2'
+    click('.contact-delete')
+    andThen ->
+      contactsLength = find('.contact-item').length
+      contactsLength.should.equal 1
