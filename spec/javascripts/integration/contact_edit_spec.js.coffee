@@ -13,3 +13,13 @@ describe 'ContactEdit', ->
       andThen ->
         name = find('.contact-heading').text()
         name.should.equal 'Michał Czyż'
+
+  it 'cancel changes', ->
+    visit '/contacts/2/edit'
+    andThen ->
+      fillIn '#first-name', 'Michał'
+      fillIn '#last-name', 'Czyż'
+      click '#cancel-contact'
+      andThen ->
+        name = find('.contact-heading').text()
+        name.should.equal 'Richard Stallman'

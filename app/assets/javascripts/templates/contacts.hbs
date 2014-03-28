@@ -13,10 +13,12 @@
     <tr class='contact-item'>
       <td>{{#link-to 'contact' this}}{{firstName}} {{lastName}}{{/link-to}}</td>
       <td>{{email}}</td>
-      <td></td>
+      <td>
+        {{#link-to 'contactEdit' this classNames='btn btn-success'}}edit{{/link-to}}
+      </td>
     </tr>
   {{else}}
-      <td colspan='3'>no contacts have been found</td>
+    <td colspan='3'>no contacts have been found</td>
   {{/each}}
   </tbody>
 </table>
