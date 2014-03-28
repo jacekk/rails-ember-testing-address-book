@@ -5,6 +5,10 @@ AddressBook.Contact = DS.Model.extend
   lastName:   attr 'string'
   emails: DS.hasMany 'email', async: true
 
+  fullName: (->
+    "#{@get('firstName')} #{@get('lastName')}"
+  ).property 'firstName', 'lastName'
+
 AddressBook.Contact.FIXTURES = [
   id: 1
   firstName: 'Linus'
