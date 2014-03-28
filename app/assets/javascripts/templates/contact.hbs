@@ -9,6 +9,6 @@
     {{/each}}
   </ol>
 
-  {{#link-to 'contactEdit' classNames='contact-edit btn btn-success'}}edit{{/link-to}}
+  {{#link-to 'contactEdit' this classNames='contact-edit btn btn-success'}}edit{{/link-to}}
   <button class='contact-delete btn btn-danger' {{action 'deleteContact'}}>delete</button>
 </div>
