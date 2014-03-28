@@ -23,3 +23,9 @@ describe 'ContactEdit', ->
       andThen ->
         name = find('.contact-heading').text()
         name.should.equal 'Richard Stallman'
+
+  it 'contact via the index page', ->
+    visit('/contacts')
+    .click('.contact-item:last .contact-edit')
+    andThen ->
+      find('.contact-heading').text().should.equal 'edit Richard Stallman'
