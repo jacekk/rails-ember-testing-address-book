@@ -1,11 +1,12 @@
 describe 'ContactNew', ->
-  it  'header', ->
+  beforeEach ->
     visit '/contacts/new'
+
+  it 'header', ->
     andThen ->
       find('.contact-heading').text().should.equal 'add new contact'
 
   it 'creates new contact', ->
-    visit '/contacts/new'
     andThen ->
       fillIn '#first-name', 'Mark'
       fillIn '#last-name', 'Shuttleworth'
@@ -15,7 +16,6 @@ describe 'ContactNew', ->
         name.should.equal 'Mark Shuttleworth'
 
   it 'cancel creating new contact', ->
-    visit '/contacts/new'
     andThen ->
       fillIn '#first-name', 'Steve'
       fillIn '#last-name', 'Jobs'
